@@ -1,0 +1,56 @@
+import cx from 'classnames';
+import React from 'react';
+import { Switch } from 'react-router-dom';
+
+import { masterRoute, errorRoute, testRoute } from '@/routes';
+import { HeaderNavbar, FooterNav } from '@/components';
+
+import styles from './styles.module.less';
+
+export interface IProps {
+  children: React.ReactNode;
+  //
+  disableHeader?: boolean;
+  disableFooter?: boolean;
+  //
+  className?: string;
+  style?: React.CSSProperties;
+  alwaysDarkMode?: boolean;
+}
+
+export default function MasterLayout(props: IProps) {
+  return (
+    <div
+      id="g-layout-wrapper--master"
+      className={cx(
+        styles['layout-wrapper'],
+        { [styles['layout-wrapper--always-dark-mode']]: props.alwaysDarkMode },
+        props.className,
+        'g-layout-wrapper--master',
+      )}
+      style={props.style}
+    >
+      {props.disableHeader ? null : (
+        <div className={cx(styles['layout-header'], 'g-layout-header--master')}>
+          <HeaderNavbar />
+        </div>
+      )}
+
+      <div
+        className={cx(styles['layout-container'], 'g-layout-container--master')}
+      >
+        <Switch>
+          {masterRoute}
+          {testRoute}
+          {errorRoute}
+        </Switch>
+      </div>
+
+      {props.disableFooter ? null : (
+        <div className={cx(styles['layout-footer'], 'g-layout-footer--master')}>
+          <FooterNav />
+        </div>
+      )}
+    </div>
+  );
+}
