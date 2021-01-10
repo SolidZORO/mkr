@@ -9,12 +9,11 @@ const errorRouteList: IRouteItem[] = [
   {
     name: 'Error404',
     path: '/*',
-    LazyComp: lazy(
-      () =>
-        import(
-          /* webpackChunkName: 'Error404' */
-          '@/pages/error/Error404/Error404'
-        ),
+    LazyComp: lazy(() =>
+      import(
+        /* webpackChunkName: 'Error404' */
+        '@/pages/error/Error404/Error404'
+      ).then((m) => ({ default: m.Error404 })),
     ),
     exact: true,
   },
