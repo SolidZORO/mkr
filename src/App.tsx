@@ -16,19 +16,17 @@ Spin.setDefaultIndicator(
   <Spiner className="icon-spin" style={{ fontSize: '200%' }} />,
 );
 
-export default function App() {
-  return (
-    <ErrorBoundary>
-      <div className="app">
-        <HelmetProvider>
-          <Router>
-            <Switch>
-              <Route component={MasterLayout} />
-              <Redirect to="/404" />
-            </Switch>
-          </Router>
-        </HelmetProvider>
-      </div>
-    </ErrorBoundary>
-  );
-}
+export const App = () => (
+  <ErrorBoundary>
+    <div className="app">
+      <HelmetProvider>
+        <Router>
+          <Switch>
+            <Route component={MasterLayout} />
+            <Redirect to="/404" />
+          </Switch>
+        </Router>
+      </HelmetProvider>
+    </div>
+  </ErrorBoundary>
+);

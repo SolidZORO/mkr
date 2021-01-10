@@ -13,7 +13,7 @@ interface IProps {
   alwaysDarkMode?: boolean;
 }
 
-export default function HeaderNavbar(props: IProps) {
+export const HeaderNavbar: React.FC<IProps> = (props) => {
   const navs = [
     { to: '/', icon: <FiTriangle />, exact: true },
     { to: '/about', icon: <FiPercent />, exact: true },

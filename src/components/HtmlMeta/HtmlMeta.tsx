@@ -1,6 +1,8 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
+import { envConfig } from '@/configs';
+
 interface IProps {
   title: React.ReactNode;
   disableSiteName?: boolean;
@@ -10,8 +12,11 @@ interface IProps {
   alwaysDarkMode?: boolean;
 }
 
-export default function HtmlMeta(props: IProps) {
-  const siteName = props.disableSiteName ? '' : ` - mkr`;
+export const HtmlMeta: React.FC<IProps> = (props) => {
+  const siteName = props.disableSiteName
+    ? ''
+    : ` - ${envConfig.REACT_APP_SITE_NAME}`;
+
 
   return (
     <Helmet>
@@ -21,4 +26,4 @@ export default function HtmlMeta(props: IProps) {
       </title>
     </Helmet>
   );
-}
+};

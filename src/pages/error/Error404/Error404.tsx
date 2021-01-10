@@ -12,12 +12,10 @@ interface IProps extends IPageProps {
   alwaysDarkMode?: boolean;
 }
 
-export default function Error404(props: IProps) {
-  return (
-    <PageContainer className={cx(styles['comp-wrapper'], props.className)}>
-      <HtmlMeta title="Error 404" />
+export const Error404: React.FC<IProps> = (props) => (
+  <PageContainer className={cx(styles['comp-wrapper'], props.className)}>
+    <HtmlMeta title="Error 404" />
 
-      <h2>Error 404</h2>
-    </PageContainer>
-  );
-}
+    <h2>Error 404</h2>
+  </PageContainer>
+);

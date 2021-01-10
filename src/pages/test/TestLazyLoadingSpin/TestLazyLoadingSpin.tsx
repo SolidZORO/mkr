@@ -12,13 +12,11 @@ interface IProps extends IPageProps {
   alwaysDarkMode?: boolean;
 }
 
-export default function TestLazyLoadingSpin(props: IProps) {
-  return (
-    <PageContainer className={cx(styles['comp-wrapper'], props.className)}>
-      <HtmlMeta title={props.routeProps.name} />
+export const TestLazyLoadingSpin: React.FC<IProps> = (props) => (
+  <PageContainer className={cx(styles['comp-wrapper'], props.className)}>
+    <HtmlMeta title={props.routeProps.name} />
 
-      <LazyLoadingSpin fullscreen />
-      <LazyLoadingSpin style={{ color: 'red' }} />
-    </PageContainer>
-  );
-}
+    <LazyLoadingSpin fullscreen />
+    <LazyLoadingSpin style={{ color: 'red' }} />
+  </PageContainer>
+);

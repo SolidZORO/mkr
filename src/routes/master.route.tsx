@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom';
 
 import { IRouteItem } from '@/interfaces';
 
-import Home from '@/pages/home/Home/Home';
+import { Home } from '@/pages/home/Home/Home';
 
 import { lazy, routeKey } from './_fn';
 
@@ -11,12 +11,22 @@ const masterRouteList: IRouteItem[] = [
   {
     name: 'AboutDarkMode',
     path: '/about/:name',
-    LazyComp: lazy(() => import('@/pages/about/AboutDarkMode/AboutDarkMode')),
+    LazyComp: lazy(() =>
+      import(
+        /* webpackChunkName: 'AboutDarkMode' */
+        '@/pages/about/AboutDarkMode/AboutDarkMode'
+      ).then((m) => ({ default: m.AboutDarkMode })),
+    ),
   },
   {
     name: 'About',
     path: '/about',
-    LazyComp: lazy(() => import('@/pages/about/About/About')),
+    LazyComp: lazy(() =>
+      import(
+        /* webpackChunkName: 'About' */
+        '@/pages/about/About/About'
+      ).then((m) => ({ default: m.About })),
+    ),
     exact: true,
   },
   {

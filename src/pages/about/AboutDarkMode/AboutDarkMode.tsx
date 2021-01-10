@@ -15,7 +15,7 @@ interface IProps extends IPageProps {
   alwaysDarkMode?: boolean;
 }
 
-export default function AboutDarkMode(props: IProps) {
+export const AboutDarkMode: React.FC<IProps> = (props) => {
   useDarkMode();
 
   const { name } = useParams<{ name?: string }>();
@@ -31,4 +31,4 @@ export default function AboutDarkMode(props: IProps) {
       </div>
     </PageContainer>
   );
-}
+};

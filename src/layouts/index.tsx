@@ -1,1 +1,1 @@
-export { default as MasterLayout } from './MasterLayout/MasterLayout';
+export { MasterLayout } from './MasterLayout/MasterLayout';

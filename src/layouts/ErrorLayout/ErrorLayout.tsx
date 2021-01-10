@@ -18,35 +18,33 @@ export interface IProps {
   alwaysDarkMode?: boolean;
 }
 
-export default function ErrorLayout(props: IProps) {
-  return (
-    <div
-      id="g-layout-wrapper--error"
-      className={cx(
-        styles['layout-wrapper'],
-        { [styles['layout-wrapper--always-dark-mode']]: props.alwaysDarkMode },
-        props.className,
-        'g-layout-wrapper--error',
-      )}
-      style={props.style}
-    >
-      {props.disableHeader ? null : (
-        <div className={cx(styles['layout-header'], 'g-layout-header--error')}>
-          <HeaderNavbar />
-        </div>
-      )}
-
-      <div
-        className={cx(styles['layout-container'], 'g-layout-container--error')}
-      >
-        <Switch>{errorRoute}</Switch>
+export const ErrorLayout: React.FC<IProps> = (props) => (
+  <div
+    id="g-layout-wrapper--error"
+    className={cx(
+      styles['layout-wrapper'],
+      { [styles['layout-wrapper--always-dark-mode']]: props.alwaysDarkMode },
+      props.className,
+      'g-layout-wrapper--error',
+    )}
+    style={props.style}
+  >
+    {props.disableHeader ? null : (
+      <div className={cx(styles['layout-header'], 'g-layout-header--error')}>
+        <HeaderNavbar />
       </div>
+    )}
 
-      {props.disableFooter ? null : (
-        <div className={cx(styles['layout-footer'], 'g-layout-footer--error')}>
-          <FooterNav />
-        </div>
-      )}
+    <div
+      className={cx(styles['layout-container'], 'g-layout-container--error')}
+    >
+      <Switch>{errorRoute}</Switch>
     </div>
-  );
-}
+
+    {props.disableFooter ? null : (
+      <div className={cx(styles['layout-footer'], 'g-layout-footer--error')}>
+        <FooterNav />
+      </div>
+    )}
+  </div>
+);

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { CSS_THEME_DARK } from '@/constants';
 
-export default function useDarkMode() {
+export function useDarkMode() {
   useEffect(() => {
     const htmlEl = document?.documentElement;
 
