@@ -12,14 +12,14 @@ interface IProps {
 }
 
 export const HugeIcon: React.FC<IProps> = (props) => (
-    <div
-      className={cx(
-        styles['comp-wrapper'],
-        { [styles['comp-wrapper--always-dark-mode']]: props.alwaysDarkMode },
-        props.className,
-      )}
-      style={props.style}
-    >
-      {props.icon}
-    </div>
-  );
+  <div
+    className={cx(
+      styles['comp-wrapper'],
+      { [styles['comp-wrapper--always-dark-mode']]: props.alwaysDarkMode },
+      props.className,
+    )}
+    style={props.style}
+  >
+    {props.icon}
+  </div>
+);

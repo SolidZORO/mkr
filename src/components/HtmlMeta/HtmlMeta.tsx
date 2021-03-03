@@ -17,7 +17,6 @@ export const HtmlMeta: React.FC<IProps> = (props) => {
     ? ''
     : ` - ${envConfig.REACT_APP_SITE_NAME}`;
 
-
   return (
     <Helmet>
       <title>

@@ -38,4 +38,4 @@ export const HeaderNavbar: React.FC<IProps> = (props) => {
       ))}
     </div>
   );
-}
+};
