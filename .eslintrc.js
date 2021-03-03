@@ -1,10 +1,5 @@
 module.exports = {
-  extends: [
-    'airbnb-typescript',
-    'prettier',
-    'prettier/react',
-    'prettier/@typescript-eslint',
-  ],
+  extends: ['airbnb-typescript', 'prettier'],
   plugins: ['react', '@typescript-eslint'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -24,6 +19,7 @@ module.exports = {
     __DEV__: true,
     __PROD__: true,
   },
+  ignorePatterns: ['.eslintrc.js'],
   rules: {
     'max-len': ['error', 80],
     'no-console': 0,
