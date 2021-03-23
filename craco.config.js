@@ -1,14 +1,15 @@
 /* eslint-disable max-len, no-param-reassign, import/no-extraneous-dependencies, @typescript-eslint/no-unused-vars, arrow-body-style, no-new */
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const path = require('path');
 
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const cracoBabel = require('./scripts/craco/craco-babel');
 const cracoPluginLess = require('./scripts/craco/craco-plugin--less');
-const cracoPluginAlias = require('./scripts/craco/craco-plugin--alias');
+// const cracoPluginAlias = require('./scripts/craco/craco-plugin--alias');
 
 module.exports = {
   babel: cracoBabel,
   plugins: [
-    cracoPluginAlias,
+    // cracoPluginAlias,
     cracoPluginLess,
     {
       plugin: {
@@ -23,4 +24,16 @@ module.exports = {
       },
     },
   ],
+  webpack: {
+    alias: {
+      '@': path.resolve(__dirname, 'src/'),
+    },
+  },
+  jest: {
+    configure: {
+      moduleNameMapper: {
+        '^@(.*)$': '<rootDir>/src$1',
+      },
+    },
+  },
 };
