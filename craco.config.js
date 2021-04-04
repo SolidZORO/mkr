@@ -1,26 +1,21 @@
 /* eslint-disable max-len, no-param-reassign, import/no-extraneous-dependencies, @typescript-eslint/no-unused-vars, arrow-body-style, no-new */
 const path = require('path');
+const cracoPluginLess = require('next-plugin-antd-less/overrideWebpackConfig');
 
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const cracoBabel = require('./scripts/craco/craco-babel');
-const cracoPluginLess = require('./scripts/craco/craco-plugin--less');
-// const cracoPluginAlias = require('./scripts/craco/craco-plugin--alias');
+const cracoPluginAnalyze = require('./scripts/craco/craco-plugin--analyze');
 
 module.exports = {
   babel: cracoBabel,
   plugins: [
-    // cracoPluginAlias,
-    cracoPluginLess,
+    cracoPluginAnalyze,
     {
-      plugin: {
-        overrideWebpackConfig: ({ webpackConfig }) => {
-          if (process.argv.includes('--analyze')) {
-            // eslint-disable-next-line no-new
-            webpackConfig.plugins.push(new BundleAnalyzerPlugin());
-          }
-
-          return webpackConfig;
+      plugin: cracoPluginLess,
+      options: {
+        modifyVars: {
+          '@THEME--DARK': 'theme-dark',
         },
+        lessVarsFilePath: './src/styles/variables.less',
       },
     },
   ],
