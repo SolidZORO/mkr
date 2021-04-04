@@ -22,6 +22,8 @@
 
 A Simple **CSR** Scaffolding for React Projects w/ [CRA](https://create-react-app.dev/) and [Typescript](https://www.typescriptlang.org/).
 
+`Less` is supported by [next-plugin-antd-less](https://github.com/SolidZORO/next-plugin-antd-less).
+
 If you need SSR, you can use [mkn](https://github.com/SolidZORO/mkn).
 
 
