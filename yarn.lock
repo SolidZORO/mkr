@@ -5889,10 +5889,10 @@ eslint-plugin-jest@^24.1.0:
   dependencies:
     "@typescript-eslint/experimental-utils" "^4.0.1"
 
-eslint-plugin-jest@^24.3.3:
-  version "24.3.3"
-  resolved "https://registry.npm.taobao.org/eslint-plugin-jest/download/eslint-plugin-jest-24.3.3.tgz#4e0f9dd6b1667990e7be3a7d7c9a85b952056df9"
-  integrity sha1-Tg+d1rFmeZDnvjp9fJqFuVIFbfk=
+eslint-plugin-jest@^24.3.4:
+  version "24.3.4"
+  resolved "https://registry.npm.taobao.org/eslint-plugin-jest/download/eslint-plugin-jest-24.3.4.tgz?cache=0&sync_timestamp=1617587636742&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Feslint-plugin-jest%2Fdownload%2Feslint-plugin-jest-24.3.4.tgz#6d90c3554de0302e879603dd6405474c98849f19"
+  integrity sha1-bZDDVU3gMC6HlgPdZAVHTJiEnxk=
   dependencies:
     "@typescript-eslint/experimental-utils" "^4.0.1"
 
@@ -9234,10 +9234,10 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.npm.taobao.org/neo-async/download/neo-async-2.6.2.tgz?cache=0&sync_timestamp=1594317447342&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fneo-async%2Fdownload%2Fneo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha1-tKr7k+OustgXTKU88WOrfXMIMF8=
 
-next-plugin-antd-less@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npm.taobao.org/next-plugin-antd-less/download/next-plugin-antd-less-1.0.2.tgz#560e39edb9692a841264aca672746843d5e18b68"
-  integrity sha1-Vg457blpKoQSZKymcnRoQ9Xhi2g=
+next-plugin-antd-less@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/next-plugin-antd-less/download/next-plugin-antd-less-1.0.3.tgz#8efdd8fcf292df00b2a236e2b2ebbfccac5e7202"
+  integrity sha1-jv3Y/PKS3wCyojbisuu/zKxecgI=
   dependencies:
     clone "^2.1.2"
     less "^4.1.1"
