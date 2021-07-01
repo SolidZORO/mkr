@@ -11,15 +11,18 @@ interface IProps {
   alwaysDarkMode?: boolean;
 }
 
-export const HugeIcon: React.FC<IProps> = (props) => (
-  <div
-    className={cx(
-      styles['comp-wrapper'],
-      { [styles['comp-wrapper--always-dark-mode']]: props.alwaysDarkMode },
-      props.className,
-    )}
-    style={props.style}
-  >
-    {props.icon}
-  </div>
-);
+export const HugeIcon: React.FC<IProps> = (props) => {
+  return (
+    <div
+      className={cx(
+        styles['comp-wrapper'],
+        { [styles['comp-wrapper--alwaysDarkMode']]: props.alwaysDarkMode },
+        `g-comp--${HugeIcon.displayName}`,
+        props.className,
+      )}
+      style={props.style}
+    >
+      {props.icon}
+    </div>
+  );
+};

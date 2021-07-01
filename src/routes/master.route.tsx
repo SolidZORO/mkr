@@ -1,9 +1,9 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { IRouteItem } from '@/interfaces';
-
-import { Home } from '@/pages/home/Home/Home';
+import { Home } from '@/page-components/home/Home/Home';
 
 import { lazy, routeKey } from './_fn';
 
@@ -11,22 +11,12 @@ const masterRouteList: IRouteItem[] = [
   {
     name: 'AboutDarkMode',
     path: '/about/:name',
-    LazyComp: lazy(() =>
-      import(
-        /* webpackChunkName: 'AboutDarkMode' */
-        '@/pages/about/AboutDarkMode/AboutDarkMode'
-      ).then((m) => ({ default: m.AboutDarkMode })),
-    ),
+    LazyComp: lazy(() => import(/* webpackChunkName: 'AboutDarkMode' */ '@/page-components/about/AboutDarkMode/AboutDarkMode' ).then((m) => ({ default: m.AboutDarkMode }))), // prettier-ignore
   },
   {
     name: 'About',
     path: '/about',
-    LazyComp: lazy(() =>
-      import(
-        /* webpackChunkName: 'About' */
-        '@/pages/about/About/About'
-      ).then((m) => ({ default: m.About })),
-    ),
+    LazyComp: lazy(() => import(/* webpackChunkName: 'About' */ '@/page-components/about/About/About' ).then((m) => ({ default: m.About }))), // prettier-ignore
     exact: true,
   },
   {

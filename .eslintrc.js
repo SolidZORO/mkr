@@ -21,10 +21,17 @@ module.exports = {
   },
   ignorePatterns: ['.eslintrc.js'],
   rules: {
-    'max-len': ['error', 80],
+    'max-len': [2, 80],
     'no-console': 0,
     'import/prefer-default-export': 0,
     'no-underscore-dangle': 0,
+    'arrow-body-style': 0,
+    'no-restricted-syntax': [
+      2,
+      'ForInStatement',
+      'LabeledStatement',
+      'WithStatement',
+    ],
     //
     //
     'react-hooks/exhaustive-deps': 0,
@@ -33,9 +40,10 @@ module.exports = {
     'react/no-unused-prop-types': 0,
     'react/prop-types': 0,
     //
-    // for styles['abc']
-    '@typescript-eslint/dot-notation': 0,
+    //
+    '@typescript-eslint/dot-notation': 0, // for e.g. styles['style-name']
     '@typescript-eslint/no-unused-vars': 0,
     '@typescript-eslint/naming-convention': 0,
+    '@typescript-eslint/lines-between-class-members': 0,
   },
 };

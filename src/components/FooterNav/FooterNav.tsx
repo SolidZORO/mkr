@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import { pkgConfig, envConfig } from '@/configs';
+import { config } from '@/configs';
 
 import styles from './style.module.less';
 
@@ -12,23 +12,44 @@ interface IProps {
   alwaysDarkMode?: boolean;
 }
 
-export const FooterNav: React.FC<IProps> = (props) => (
-  <div
-    className={cx(
-      styles['comp-wrapper'],
-      { [styles['comp-wrapper--always-dark-mode']]: props.alwaysDarkMode },
-      props.className,
-    )}
-    style={props.style}
-  >
-    © {new Date().getFullYear()}
-    <a
-      href={`https://github.com/SolidZORO/${pkgConfig.name}`}
-      target="_blank"
-      rel="noreferrer"
+const fmtVer = (v: string) => v.replace('^', '').replace('~', '');
+const deps = [
+  { k: 'react', v: fmtVer(config.pkg.dependencies.react) },
+  { k: 'antd', v: fmtVer(config.pkg.dependencies.antd) },
+  { k: 'craco', v: fmtVer(config.pkg.devDependencies['@craco/craco']) },
+];
+
+export const FooterNav: React.FC<IProps> = (props) => {
+  return (
+    <div
+      className={cx(
+        styles['comp-wrapper'],
+        { [styles['comp-wrapper--alwaysDarkMode']]: props.alwaysDarkMode },
+        `g-comp--${FooterNav.displayName}`,
+        props.className,
+      )}
+      style={props.style}
     >
-      {envConfig.REACT_APP_SITE_NAME}
-    </a>{' '}
-    by {pkgConfig.author.split(' ')[0]}
-  </div>
-);
+      <div className={styles['copyright']}>
+        © {new Date().getFullYear()}
+        <a
+          href={`https://github.com/SolidZORO/${config.pkg.name}`}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {config.app.NAME}
+        </a>{' '}
+        by {config.pkg.author.split(' ')[0]}
+      </div>
+
+      <div className={styles['deps']}>
+        {deps.map((d) => (
+          <div className={styles['dep']} key={d.k}>
+            <strong>{d.k}</strong>
+            <sup>{d.v}</sup>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

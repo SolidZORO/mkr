@@ -1,3 +1,14 @@
-import pkg from '../../package.json';
+import p from '../../package.json';
 
-export const pkgConfig = pkg;
+export const pkg = {
+  name: p.name,
+  version: p.version,
+  author: p.author,
+  dependencies: {
+    react: p.dependencies.react,
+    antd: p.dependencies.antd,
+  },
+  devDependencies: {
+    '@craco/craco': p.devDependencies['@craco/craco'],
+  },
+};

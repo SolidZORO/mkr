@@ -1,5 +1,7 @@
 export interface IDotEnv {
-  REACT_APP_SITE_NAME?: string;
+  PUBLIC_URL: string;
+  //
+  REACT_APP_NAME: string;
 }
 
 export interface IBuild {

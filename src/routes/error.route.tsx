@@ -1,20 +1,17 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Route } from 'react-router-dom';
 
 import { IRouteItem } from '@/interfaces';
+import { Error404 } from '@/page-components/error/Error404/Error404';
 
-import { lazy, routeKey } from './_fn';
+import { routeKey } from './_fn';
 
 const errorRouteList: IRouteItem[] = [
   {
     name: 'Error404',
     path: '/*',
-    LazyComp: lazy(() =>
-      import(
-        /* webpackChunkName: 'Error404' */
-        '@/pages/error/Error404/Error404'
-      ).then((m) => ({ default: m.Error404 })),
-    ),
+    LazyComp: Error404,
     exact: true,
   },
 ];

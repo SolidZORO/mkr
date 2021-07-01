@@ -24,7 +24,8 @@ export const HeaderNavbar: React.FC<IProps> = (props) => {
     <div
       className={cx(
         styles['comp-wrapper'],
-        { [styles['comp-wrapper--always-dark-mode']]: props.alwaysDarkMode },
+        { [styles['comp-wrapper--alwaysDarkMode']]: props.alwaysDarkMode },
+        `g-comp--${HeaderNavbar.displayName}`,
         props.className,
       )}
       style={props.style}

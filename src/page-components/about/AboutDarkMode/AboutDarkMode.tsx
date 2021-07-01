@@ -21,7 +21,15 @@ export const AboutDarkMode: React.FC<IProps> = (props) => {
   const { name } = useParams<{ name?: string }>();
 
   return (
-    <PageContainer className={cx(styles['comp-wrapper'], props.className)}>
+    <PageContainer
+      className={cx(
+        styles['comp-wrapper'],
+        { [styles['comp-wrapper--alwaysDarkMode']]: props.alwaysDarkMode },
+        `g-comp--${AboutDarkMode.displayName}`,
+        props.className,
+      )}
+      style={props.style}
+    >
       <HtmlMeta title={`${name}`} />
 
       <HugeIcon icon={<FiMoon />} className={styles['huge-icon']} />

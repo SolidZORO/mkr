@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { Route } from 'react-router-dom';
 
@@ -9,9 +10,7 @@ const testRouteList: IRouteItem[] = [
   {
     name: 'TestLazyLoadingSpin',
     path: '/test/lazy-loading-spin',
-    LazyComp: lazy(
-      () => import('@/pages/test/TestLazyLoadingSpin/TestLazyLoadingSpin'),
-    ),
+    LazyComp: lazy(() => import(/* webpackChunkName: 'TestLazyLoadingSpin' */ '@/page-components/test/TestLazyLoadingSpin/TestLazyLoadingSpin' ).then((m) => ({ default: m.TestLazyLoadingSpin }))), // prettier-ignore
   },
 ];
 
