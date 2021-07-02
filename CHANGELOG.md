@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/SolidZORO/mkr/compare/v0.1.2...v0.1.3) (2021-07-02)
+
+
+### Features
+
+* add configs ([a100117](https://github.com/SolidZORO/mkr/commit/a100117f913d69c6032b54aa5774b945f516f7f7))
+* new file structure ([228000d](https://github.com/SolidZORO/mkr/commit/228000df27bb09fb817854a6e596ec9869cd5056))
+* use next-plugin-antd-less hot reload less var supported ([b16c8ef](https://github.com/SolidZORO/mkr/commit/b16c8ef9eab71b4acfbf7f17f47ba9e0521c1ce0))
+
+
+### Refactor
+
+* add animate.less ([df60f9b](https://github.com/SolidZORO/mkr/commit/df60f9bd9fac0a65c1dada1e6f9428f6883e8337))
+* edit withAntdLess pluginOptions ([39b4ac2](https://github.com/SolidZORO/mkr/commit/39b4ac283cab73fb88442af62db1b5d3c54296a4))
+* update deps ([9d47b8c](https://github.com/SolidZORO/mkr/commit/9d47b8cb77e9ecc9e36e54b6af1920cf6b22d795))
+* update deps ([240fc04](https://github.com/SolidZORO/mkr/commit/240fc0461cda3277e5d1562426be8366abe5c567))
+* update next-plugin-antd-less ([2bf9f13](https://github.com/SolidZORO/mkr/commit/2bf9f13d1378d8ebbd09312cf51e840b7e4f69fa))
+* use next-plugin-antd-less 1.2.0 ([7f13ee7](https://github.com/SolidZORO/mkr/commit/7f13ee7afef43e17979098801447c7526f7452c9))
+
 ### [0.1.2](https://github.com/SolidZORO/mkr/compare/v0.1.1...v0.1.2) (2021-03-23)
 
 
