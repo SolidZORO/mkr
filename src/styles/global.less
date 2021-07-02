@@ -1,6 +1,6 @@
 @import '/src/styles/variables.less';
 @import '/src/styles/variables-css.less';
-@import '/src/styles/animation.less';
+@import '/src/styles/animate.less';
 
 html,
 body {
@@ -35,6 +35,6 @@ body,
 
 .g-icon-spin {
   @s: 0.6s;
-  -webkit-animation: animation-spin @s infinite linear;
-  animation: animation-spin @s infinite linear;
+  -webkit-animation: infiniteRotating @s infinite linear;
+  animation: infiniteRotating @s infinite linear;
 }
