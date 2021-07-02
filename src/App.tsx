@@ -10,14 +10,12 @@ Spin.setDefaultIndicator(<LoadingSpinner />);
 
 export const App = () => (
   <ErrorBoundary>
-    <div className="app">
-      <HelmetProvider>
-        <IconContext.Provider value={{ className: 'rcicon g-rcicon' }}>
-          <Router>
-            <AppRouter />
-          </Router>
-        </IconContext.Provider>
-      </HelmetProvider>
-    </div>
+    <HelmetProvider>
+      <IconContext.Provider value={{ className: 'rcicon g-rcicon' }}>
+        <Router>
+          <AppRouter />
+        </Router>
+      </IconContext.Provider>
+    </HelmetProvider>
   </ErrorBoundary>
 );

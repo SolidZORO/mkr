@@ -12,7 +12,7 @@ const masterRouteList: IRouteItem[] = [
   {
     name: 'AboutDarkMode',
     path: '/about/:name',
-    LazyComp: lazy(() => import(/* webpackChunkName: 'AboutDarkMode' */ '@/page-components/about/AboutDarkMode/AboutDarkMode' ).then((m) => ({ default: m.AboutDarkMode }))), // prettier-ignore
+    LazyComp: lazy(() => import(/* webpackChunkName: 'AboutDarkMode' */ '@/page-components/about/AboutName/AboutName' ).then((m) => ({ default: m.AboutName }))), // prettier-ignore
   },
   {
     name: 'About',

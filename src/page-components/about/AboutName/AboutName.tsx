@@ -11,7 +11,7 @@ import styles from './styles.module.less';
 
 interface IProps extends IPageBaseProps {}
 
-export const AboutDarkMode: React.FC<IProps> = (props) => {
+export const AboutName: React.FC<IProps> = (props) => {
   useDarkMode();
 
   const { name } = useParams<{ name?: string }>();
@@ -21,7 +21,7 @@ export const AboutDarkMode: React.FC<IProps> = (props) => {
       className={cx(
         styles['comp-wrapper'],
         { [styles['comp-wrapper--alwaysDarkMode']]: props.alwaysDarkMode },
-        `g-comp--${AboutDarkMode.displayName}`,
+        `g-comp--${AboutName.displayName}`,
         props.className,
       )}
       style={props.style}
