@@ -1,3 +1,5 @@
+@import '/src/styles/animation.less';
+
 .just-a-bgc() {
   background-color: yellow;
 }
@@ -12,4 +14,11 @@
   font-size: 12px;
   transform-origin: 0;
   transform: scale(0.8);
+}
+
+.fade-in-opacity() {
+  animation-name: animation-fade-in-opacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-duration: 1s;
 }

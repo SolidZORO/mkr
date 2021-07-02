@@ -6,6 +6,7 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .copyright {
@@ -30,7 +31,7 @@
 
 .deps {
   .font-size-10px();
-  margin-top: 20px;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   transform-origin: center;
@@ -44,13 +45,13 @@
     }
 
     sup {
+      transform: scale(0.7);
       display: inline-block;
-      margin-left: 2px;
     }
   }
 }
 
-// DARK-MODE
+// DARK-MODE--COMP
 .comp-wrapper--alwaysDarkMode,
 :global(.@{THEME--DARK}) .comp-wrapper {
   color: var(--text-color--dark);

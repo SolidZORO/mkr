@@ -3,17 +3,13 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { FiMoon } from 'react-icons/fi';
 
-import { IPageProps } from '@/interfaces';
+import { IPageBaseProps } from '@/interfaces';
 import { useDarkMode } from '@/hooks';
-import { HtmlMeta, PageContainer, HugeIcon } from '@/components';
+import { HtmlMeta, HugeIcon, PageContainer } from '@/components';
 
 import styles from './styles.module.less';
 
-interface IProps extends IPageProps {
-  className?: string;
-  style?: React.CSSProperties;
-  alwaysDarkMode?: boolean;
-}
+interface IProps extends IPageBaseProps {}
 
 export const AboutDarkMode: React.FC<IProps> = (props) => {
   useDarkMode();

@@ -2,14 +2,11 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import { config } from '@/configs';
+import { ICompBaseProps } from '@/interfaces';
 
-interface IProps {
+interface IProps extends ICompBaseProps {
   title: React.ReactNode;
   disableSiteName?: boolean;
-  //
-  className?: string;
-  style?: React.CSSProperties;
-  alwaysDarkMode?: boolean;
 }
 
 export const HtmlMeta: React.FC<IProps> = (props) => {

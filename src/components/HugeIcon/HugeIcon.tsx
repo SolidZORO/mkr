@@ -1,14 +1,12 @@
 import React from 'react';
 import cx from 'classnames';
 
+import { ICompBaseProps } from '@/interfaces';
+
 import styles from './style.module.less';
 
-interface IProps {
+interface IProps extends ICompBaseProps {
   icon: any;
-  //
-  className?: string;
-  style?: React.CSSProperties;
-  alwaysDarkMode?: boolean;
 }
 
 export const HugeIcon: React.FC<IProps> = (props) => {

@@ -3,7 +3,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 
 import { errorRoute } from '@/routes';
-import { HeaderNavbar, FooterNav } from '@/components';
+import { FooterNav, HeaderNavbar } from '@/components';
 
 import styles from './styles.module.less';
 
@@ -20,12 +20,12 @@ export interface IProps {
 
 export const ErrorLayout: React.FC<IProps> = (props) => (
   <div
-    id="g-layout-wrapper--error"
+    id={`g-layout--${ErrorLayout.displayName}`}
     className={cx(
-      styles['layout-wrapper'],
-      { [styles['layout-wrapper--always-dark-mode']]: props.alwaysDarkMode },
+      styles['comp-wrapper'],
+      { [styles['comp-wrapper--alwaysDarkMode']]: props.alwaysDarkMode },
+      `g-comp--${ErrorLayout.displayName}`,
       props.className,
-      'g-layout-wrapper--error',
     )}
     style={props.style}
   >

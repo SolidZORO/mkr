@@ -1,16 +1,12 @@
 import cx from 'classnames';
 import React from 'react';
 
-import { IPageProps } from '@/interfaces';
-import { HtmlMeta, PageContainer, LazyLoadingSpin } from '@/components';
+import { IPageBaseProps } from '@/interfaces';
+import { HtmlMeta, LazyLoadingSpin, PageContainer } from '@/components';
 
 import styles from './styles.module.less';
 
-interface IProps extends IPageProps {
-  className?: string;
-  style?: React.CSSProperties;
-  alwaysDarkMode?: boolean;
-}
+interface IProps extends IPageBaseProps {}
 
 export const TestLazyLoadingSpin: React.FC<IProps> = (props) => {
   return (

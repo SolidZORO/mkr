@@ -1,31 +1,22 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Redirect,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
-import { CgSpinner as Spiner } from 'react-icons/cg';
+import { IconContext } from 'react-icons';
 import { Spin } from 'antd';
 
-import { MasterLayout } from '@/layouts';
-import { ErrorBoundary } from '@/components';
+import { AppRouter, ErrorBoundary, LoadingSpinner } from '@/components';
 
-Spin.setDefaultIndicator(
-  <Spiner className="icon-spin" style={{ fontSize: '200%' }} />,
-);
+Spin.setDefaultIndicator(<LoadingSpinner />);
 
 export const App = () => (
   <ErrorBoundary>
     <div className="app">
       <HelmetProvider>
-        <Router>
-          <Switch>
-            <Route component={MasterLayout} />
-            <Redirect to="/404" />
-          </Switch>
-        </Router>
+        <IconContext.Provider value={{ className: 'rcicon g-rcicon' }}>
+          <Router>
+            <AppRouter />
+          </Router>
+        </IconContext.Provider>
       </HelmetProvider>
     </div>
   </ErrorBoundary>

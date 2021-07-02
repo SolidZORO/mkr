@@ -20,6 +20,7 @@ export const errorRoute = errorRouteList.map((route) => (
   <Route
     key={routeKey(route)}
     path={route.path}
+    // @ts-ignore
     name={route.name}
     exact={route.exact}
     render={() => <route.LazyComp routeProps={route} />}

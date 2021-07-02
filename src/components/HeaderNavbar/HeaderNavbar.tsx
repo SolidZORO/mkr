@@ -1,19 +1,17 @@
 import React from 'react';
 import cx from 'classnames';
 import { Button } from 'antd';
-import { NavLink as Link } from 'react-router-dom';
-import { FiPercent, FiMoon, FiTriangle } from 'react-icons/fi';
+import { Link, useLocation } from 'react-router-dom';
+import { FiMoon, FiPercent, FiTriangle } from 'react-icons/fi';
+import { ICompBaseProps } from '@/interfaces';
 
 import styles from './style.module.less';
 
-interface IProps {
-  //
-  className?: string;
-  style?: React.CSSProperties;
-  alwaysDarkMode?: boolean;
-}
+interface IProps extends ICompBaseProps {}
 
 export const HeaderNavbar: React.FC<IProps> = (props) => {
+  const { pathname } = useLocation();
+
   const navs = [
     { to: '/', icon: <FiTriangle />, exact: true },
     { to: '/about', icon: <FiPercent />, exact: true },
@@ -31,7 +29,13 @@ export const HeaderNavbar: React.FC<IProps> = (props) => {
       style={props.style}
     >
       {navs.map((nav) => (
-        <Link exact to={nav.to} key={nav.to} className={styles['nav-link']}>
+        <Link
+          to={nav.to}
+          key={nav.to}
+          className={cx(styles['nav-link'], {
+            [styles['nav-link--active']]: pathname === nav.to,
+          })}
+        >
           <Button type="ghost" className={styles['nav-button']}>
             {nav.icon}
           </Button>

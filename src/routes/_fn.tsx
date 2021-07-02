@@ -1,30 +1,31 @@
+import _ from 'lodash';
 import React from 'react';
-import loadable from '@loadable/component';
+import lazyLib from '@loadable/component';
 
-import { IRouteItem } from '@/interfaces';
+import { IRouteItem, IRouteProps } from '@/interfaces';
 
-import { LazyLoadingSpin } from '@/components';
-// import { MasterLayout } from '@/layouts';
+import { LoadingSpinner } from '@/components';
+import { RouteComponentProps } from 'react-router';
 
-export const lazy = (comp: any) =>
-  loadable(comp, {
-    fallback: <LazyLoadingSpin style={{ fontSize: '70%' }} />,
-  });
+export const lazy = (component: any) =>
+  lazyLib(component, { fallback: <LoadingSpinner size="small" lazy /> });
 
 export const routeKey = (route: IRouteItem) =>
   route.children ? `group-${route.name}` : route.path;
 
-// export const routeRender = (route: IRouteItem) => ({
-//   component:
-//     typeof route.LazyComp === 'function'
-//       ? () => <MasterLayout>{route.LazyComp}</MasterLayout>
-//       : undefined,
-//   render:
-//     typeof route.LazyComp === 'object'
-//       ? () => (
-//           <MasterLayout>
-//             <route.LazyComp />
-//           </MasterLayout>
-//         )
-//       : undefined,
-// });
+export interface IRouteRender {
+  route: IRouteProps;
+  renderProps?: RouteComponentProps<any>;
+  layoutComp: React.ReactNode;
+}
+
+export const routeRender = (opts: IRouteRender) => {
+  const routeProps = _.omit(opts?.route, ['LazyComp', 'icon']);
+  routeProps.match = opts?.renderProps?.match;
+  routeProps.location = opts?.renderProps?.location;
+
+  return (
+    // @ts-ignore
+    <opts.layoutComp routeProps={routeProps} mainComp={opts.route.LazyComp} />
+  );
+};

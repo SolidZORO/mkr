@@ -1,16 +1,12 @@
 import React from 'react';
 import cx from 'classnames';
 
+import { ICompBaseProps } from '@/interfaces';
 import { config } from '@/configs';
 
 import styles from './style.module.less';
 
-interface IProps {
-  //
-  className?: string;
-  style?: React.CSSProperties;
-  alwaysDarkMode?: boolean;
-}
+interface IProps extends ICompBaseProps {}
 
 const fmtVer = (v: string) => v.replace('^', '').replace('~', '');
 const deps = [

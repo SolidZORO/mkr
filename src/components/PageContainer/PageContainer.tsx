@@ -1,14 +1,12 @@
 import cx from 'classnames';
 import React from 'react';
 
+import { ICompBaseProps } from '@/interfaces';
+
 import styles from './styles.module.less';
 
-interface IProps {
+interface IProps extends ICompBaseProps {
   children: React.ReactNode;
-  //
-  className?: string;
-  style?: React.CSSProperties;
-  alwaysDarkMode?: boolean;
 }
 
 export const PageContainer: React.FC<IProps> = (props) => {

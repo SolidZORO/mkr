@@ -1,16 +1,12 @@
 import cx from 'classnames';
 import React from 'react';
 
-import { IPageProps } from '@/interfaces';
+import { IPageBaseProps } from '@/interfaces';
 import { HtmlMeta, PageContainer } from '@/components';
 
 import styles from './styles.module.less';
 
-interface IProps extends IPageProps {
-  className?: string;
-  style?: React.CSSProperties;
-  alwaysDarkMode?: boolean;
-}
+interface IProps extends IPageBaseProps {}
 
 export const Error404: React.FC<IProps> = (props) => {
   return (

@@ -4,8 +4,9 @@ import { Route } from 'react-router-dom';
 
 import { IRouteItem } from '@/interfaces';
 import { Home } from '@/page-components/home/Home/Home';
+import { MasterLayout } from '@/layouts';
 
-import { lazy, routeKey } from './_fn';
+import { lazy, routeKey, routeRender } from './_fn';
 
 const masterRouteList: IRouteItem[] = [
   {
@@ -29,10 +30,15 @@ const masterRouteList: IRouteItem[] = [
 
 export const masterRoute = masterRouteList.map((route) => (
   <Route
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    {...route}
     key={routeKey(route)}
-    path={route.path}
-    name={route.name}
-    exact={route.exact}
-    render={() => <route.LazyComp routeProps={route} />}
+    render={(renderProps) =>
+      routeRender({
+        route,
+        renderProps,
+        layoutComp: MasterLayout,
+      })
+    }
   />
 ));

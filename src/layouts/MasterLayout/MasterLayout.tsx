@@ -1,33 +1,26 @@
 import cx from 'classnames';
 import React from 'react';
-import { Switch } from 'react-router-dom';
 
-import { masterRoute, errorRoute, testRoute } from '@/routes';
-import { HeaderNavbar, FooterNav } from '@/components';
+import { IRouteProps } from '@/interfaces';
+import { FooterNav, HeaderNavbar } from '@/components';
 
 import styles from './styles.module.less';
 
 export interface IProps {
-  children: React.ReactNode;
+  mainComp: any;
+  routeProps: IRouteProps;
   //
   disableHeader?: boolean;
   disableFooter?: boolean;
-  //
-  className?: string;
-  style?: React.CSSProperties;
-  alwaysDarkMode?: boolean;
 }
 
 export const MasterLayout: React.FC<IProps> = (props) => (
   <div
-    id="g-layout-wrapper--master"
+    id={`g-layout--${MasterLayout.displayName}`}
     className={cx(
-      styles['layout-wrapper'],
-      { [styles['layout-wrapper--always-dark-mode']]: props.alwaysDarkMode },
-      props.className,
-      'g-layout-wrapper--master',
+      styles['comp-wrapper'],
+      `g-comp--${MasterLayout.displayName}`,
     )}
-    style={props.style}
   >
     {props.disableHeader ? null : (
       <div className={cx(styles['layout-header'], 'g-layout-header--master')}>
@@ -38,11 +31,7 @@ export const MasterLayout: React.FC<IProps> = (props) => (
     <div
       className={cx(styles['layout-container'], 'g-layout-container--master')}
     >
-      <Switch>
-        {masterRoute}
-        {testRoute}
-        {errorRoute}
-      </Switch>
+      <props.mainComp routeProps={props.routeProps} />
     </div>
 
     {props.disableFooter ? null : (
