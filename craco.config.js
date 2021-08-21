@@ -10,15 +10,9 @@ module.exports = {
   babel: cracoBabel,
   plugins: [cracoPluginAnalyze, cracoPluginLess, cracoModule],
   webpack: {
-    alias: {
-      '@': path.resolve(__dirname, 'src/'),
-    },
+    alias: { '@': path.resolve(__dirname, 'src/') },
   },
   jest: {
-    configure: {
-      moduleNameMapper: {
-        '^@(.*)$': '<rootDir>/src$1',
-      },
-    },
+    configure: { moduleNameMapper: { '^@(.*)$': '<rootDir>/src$1' } },
   },
 };

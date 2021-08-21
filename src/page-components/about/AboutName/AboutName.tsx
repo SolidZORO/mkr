@@ -5,7 +5,7 @@ import { FiMoon } from 'react-icons/fi';
 
 import { IPageBaseProps } from '@/interfaces';
 import { useDarkMode } from '@/hooks';
-import { HtmlMeta, HugeIcon, PageContainer } from '@/components';
+import { HtmlMeta, HugeIcon, PageWrapper } from '@/components';
 
 import styles from './styles.module.less';
 
@@ -17,7 +17,7 @@ export const AboutName: React.FC<IProps> = (props) => {
   const { name } = useParams<{ name?: string }>();
 
   return (
-    <PageContainer
+    <PageWrapper
       className={cx(
         styles['comp-wrapper'],
         { [styles['comp-wrapper--alwaysDarkMode']]: props.alwaysDarkMode },
@@ -33,6 +33,6 @@ export const AboutName: React.FC<IProps> = (props) => {
       <div className={styles['params-info']}>
         <code>{name}</code>
       </div>
-    </PageContainer>
+    </PageWrapper>
   );
 };

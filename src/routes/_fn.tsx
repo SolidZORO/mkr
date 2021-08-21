@@ -1,11 +1,11 @@
 import _ from 'lodash';
 import React from 'react';
 import lazyLib from '@loadable/component';
+import { RouteComponentProps } from 'react-router';
 
 import { IRouteItem, IRouteProps } from '@/interfaces';
 
 import { LoadingSpinner } from '@/components';
-import { RouteComponentProps } from 'react-router';
 
 export const lazy = (component: any) =>
   lazyLib(component, { fallback: <LoadingSpinner size="small" lazy /> });
