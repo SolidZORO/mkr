@@ -1,7 +1,7 @@
 {
   "name": "mkr",
   "description": "Make React Project w/ CRA(CRAco) and Typescript",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "author": "Jason Feng <solidzoro@live.com>",
   "private": true,
