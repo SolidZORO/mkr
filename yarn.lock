@@ -8407,10 +8407,10 @@ neo-async@^2.5.0, neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.npm.taobao.org/neo-async/download/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha1-tKr7k+OustgXTKU88WOrfXMIMF8=
 
-next-plugin-antd-less@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/next-plugin-antd-less/-/next-plugin-antd-less-1.4.1.tgz#48f59854cfebb9504184cf96fa0b88fc8a0c4ee4"
-  integrity sha512-yUQnlSZFg4IDg1tvTHeTQiOd1ivyXk3xe4cp4sa7Vkn9XMQfk6+a1lI+M3CzVMTNhLnneNKYs6t95Ssa3yQT3w==
+next-plugin-antd-less@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/next-plugin-antd-less/-/next-plugin-antd-less-1.4.2.tgz#1184700402bccf719ca3f70354ef1dcecf3619b1"
+  integrity sha512-ArPdpv8z4M9I7xw+xnzG6wiKYHarEVrEo1tutMZPhD2qzcFWrmab0cw6McZutofxIe4VL9kedrlUDVo1iIfLxQ==
   dependencies:
     clone "^2.1.2"
     less "^4.1.1"
