@@ -5,6 +5,7 @@ import { IPageBaseProps } from '@/interfaces';
 import { HtmlMeta, PageWrapper } from '@/components';
 
 import styles from './styles.module.less';
+import cssModule from './css-module.module.css';
 
 // ❌ is not work
 // Please use require
@@ -30,7 +31,17 @@ export const Test: React.FC<IProps> = (props) => (
   <PageWrapper className={cx(styles['comp-wrapper'], props.className)}>
     <HtmlMeta title="Test" />
 
-    <div className={styles['image-bg']}>IMAGE-BG</div>
+    {/*<div className={cssModule['image-bg']}>IMAGE-BG</div>*/}
+    {/*<div className={styles['image-bg']}>IMAGE-BG</div>*/}
+    <div
+      className={styles['image-bg']}
+      style={{
+        backgroundImage: "url('/images/image-public.jpg')",
+      }}
+    >
+      IMAGE-BG
+    </div>
+    {/*<div className="image-bg--less">IMAGE-BG</div>*/}
 
     <br />
     <br />

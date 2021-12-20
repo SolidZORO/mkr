@@ -2,13 +2,13 @@
 module.exports = {
   plugin: {
     overrideWebpackConfig: ({ webpackConfig }) => {
-      webpackConfig.optimization.splitChunks.name = true;
+      // webpackConfig.optimization.splitChunks.name = true;
 
       const __PROD__ = process.env.NODE_ENV === 'production';
 
-      if (__PROD__) {
-        webpackConfig.devtool = false;
-      }
+      // if (__PROD__) {
+      //   webpackConfig.devtool = false;
+      // }
 
       // speed up compilation
       if (process.argv.includes('--debug')) {

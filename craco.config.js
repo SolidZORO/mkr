@@ -11,8 +11,22 @@ module.exports = {
   plugins: [cracoPluginAnalyze, cracoPluginLess, cracoModule],
   webpack: {
     alias: { '@': path.resolve(__dirname, 'src/') },
+    experiments: {
+      asset: true,
+    },
+    output: {
+      assetModuleFilename: 'assets/[name][ext]',
+    },
   },
   jest: {
     configure: { moduleNameMapper: { '^@(.*)$': '<rootDir>/src$1' } },
+  },
+  reactScriptsVersion: 'react-scripts',
+  style: {
+    css: {
+      loaderOptions: () => {
+        return { url: false };
+      },
+    },
   },
 };
