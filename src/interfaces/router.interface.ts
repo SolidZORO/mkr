@@ -1,5 +1,4 @@
 import { match } from 'react-router';
-import * as H from 'history';
 
 export interface IRouteItem {
   name: string;
@@ -19,5 +18,5 @@ export interface IRouteItem {
 
 export interface IRouteProps extends IRouteItem {
   match?: match<any>;
-  location?: H.Location<any>;
+  location?: any;
 }
