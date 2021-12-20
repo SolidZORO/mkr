@@ -1,14 +1,12 @@
 import cx from 'classnames';
 import React from 'react';
 
-import { IRouteProps } from '@/interfaces';
 import { FooterNav, HeaderNavbar } from '@/components';
 
 import styles from './styles.module.less';
 
 export interface IProps {
-  mainComp: any;
-  routeProps: IRouteProps;
+  children: React.ReactNode;
   //
   disableHeader?: boolean;
   disableFooter?: boolean;
@@ -31,7 +29,7 @@ export const MasterLayout: React.FC<IProps> = (props) => (
     <div
       className={cx(styles['layout-container'], 'g-layout-container--master')}
     >
-      <props.mainComp routeProps={props.routeProps} />
+      {props.children}
     </div>
 
     {props.disableFooter ? null : (

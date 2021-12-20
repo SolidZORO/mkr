@@ -1,9 +1,8 @@
 import _ from 'lodash';
 import React from 'react';
 import lazyLib from '@loadable/component';
-import { RouteComponentProps } from 'react-router';
 
-import { IRouteItem, IRouteProps } from '@/interfaces';
+import { IRouteItem } from '@/interfaces';
 
 import { LoadingSpinner } from '@/components';
 
@@ -14,15 +13,12 @@ export const routeKey = (route: IRouteItem) =>
   route.children ? `group-${route.name}` : route.path;
 
 export interface IRouteRender {
-  route: IRouteProps;
-  renderProps?: RouteComponentProps<any>;
+  route: any;
   layoutComp: React.ReactNode;
 }
 
 export const routeRender = (opts: IRouteRender) => {
   const routeProps = _.omit(opts?.route, ['LazyComp', 'icon']);
-  routeProps.match = opts?.renderProps?.match;
-  routeProps.location = opts?.renderProps?.location;
 
   return (
     // @ts-ignore

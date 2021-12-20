@@ -19,7 +19,7 @@ export const TestLazyLoadingSpin: React.FC<IProps> = (props) => {
       )}
       style={props.style}
     >
-      <HtmlMeta title={props.routeProps.name} />
+      <HtmlMeta title={props.routeProps?.name} />
 
       <LazyLoadingSpin fullscreen />
       <LazyLoadingSpin style={{ color: 'red' }} />

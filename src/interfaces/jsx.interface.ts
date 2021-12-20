@@ -2,7 +2,7 @@ import React from 'react';
 import { IRouteProps } from '@/interfaces/router.interface';
 
 export interface IPageBaseProps {
-  routeProps: IRouteProps;
+  routeProps?: IRouteProps;
   //
   className?: string;
   style?: React.CSSProperties;

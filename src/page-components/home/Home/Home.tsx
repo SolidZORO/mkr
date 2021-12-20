@@ -20,7 +20,7 @@ export const Home: React.FC<IProps> = (props) => {
       )}
       style={props.style}
     >
-      <HtmlMeta title={props.routeProps.name} />
+      <HtmlMeta title={props.routeProps?.name} />
 
       <HugeIcon icon={<FiTriangle />} />
     </PageWrapper>

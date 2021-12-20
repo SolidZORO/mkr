@@ -1,5 +1,3 @@
-import { match } from 'react-router';
-
 export interface IRouteItem {
   name: string;
   path: string;
@@ -16,7 +14,4 @@ export interface IRouteItem {
 
 // declare type ILocation = Pick<RouteComponentProps, 'location'>;
 
-export interface IRouteProps extends IRouteItem {
-  match?: match<any>;
-  location?: any;
-}
+export interface IRouteProps extends IRouteItem {}

@@ -1,9 +1,10 @@
 import React from 'react';
 import cx from 'classnames';
-import { Redirect, Route, Switch } from 'react-router';
+import { Route, Routes } from 'react-router-dom';
 
 import { errorRoute, masterRoute, testRoute } from '@/routes';
 import { ICompBaseProps } from '@/interfaces';
+import { Error404 } from '@/page-components/error/Error404/Error404';
 
 import styles from './styles.module.less';
 
@@ -24,15 +25,14 @@ export const AppRouter: React.FC<IProps> = (props) => {
       )}
       style={props.style}
     >
-      <Switch>
-        <Route exact path="/empty" component={() => null} />
+      <Routes>
+        <Route path="/empty" element={() => null} />
+        <Route path="/404" element={<Error404 />} />
 
         {masterRoute}
         {testRoute}
         {errorRoute}
-
-        <Redirect exact to="/404" />
-      </Switch>
+      </Routes>
     </div>
   );
 };
