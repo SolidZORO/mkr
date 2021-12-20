@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/SolidZORO/mkr/compare/v0.2.0...v0.3.0) (2021-12-20)
+
+
+### Features
+
+* update to CRA v5.0.0 ([e523bb5](https://github.com/SolidZORO/mkr/commit/e523bb5c2aedd4de477beb8c8a8ccf78ebbc9163))
+* update to React Router v6.0.0 ([676eb9d](https://github.com/SolidZORO/mkr/commit/676eb9d631dfe19e77e05ab55530384d11c6e6d2))
+
+
+### Bug Fixes
+
+* compatible CRA and Next.js ([e31109a](https://github.com/SolidZORO/mkr/commit/e31109a5d00f310443fbbad8ee06f5910ccd4e3b))
+
+
+### Refactor
+
+* use eslint-config-qcolate ([c941c37](https://github.com/SolidZORO/mkr/commit/c941c37cf6578475237c75f5ea8e93a4665ecc5b))
+
+### [0.2.2](https://github.com/SolidZORO/mkr/compare/v0.2.1...v0.2.2) (2021-12-20)
+
+
+### Features
+
+* update to CRA v5.0.0 ([e523bb5](https://github.com/SolidZORO/mkr/commit/e523bb5c2aedd4de477beb8c8a8ccf78ebbc9163))
+* update to React Router v6.0.0 ([676eb9d](https://github.com/SolidZORO/mkr/commit/676eb9d631dfe19e77e05ab55530384d11c6e6d2))
+
+
+### Bug Fixes
+
+* compatible CRA and Next.js ([e31109a](https://github.com/SolidZORO/mkr/commit/e31109a5d00f310443fbbad8ee06f5910ccd4e3b))
+
 ### [0.2.1](https://github.com/SolidZORO/mkr/compare/v0.2.0...v0.2.1) (2021-08-21)
 
 
