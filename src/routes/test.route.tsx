@@ -12,11 +12,11 @@ const testRouteList: IRouteItem[] = [
     path: '/test',
     LazyComp: lazy(() => import(/* webpackChunkName: 'Test' */ '@/page-components/test/Test/Test' ).then((m) => ({ default: m.Test }))), // prettier-ignore
   },
-  // {
-  //   name: 'TestLazyLoadingSpin',
-  //   path: '/test/lazy-loading-spin',
-  //   LazyComp: lazy(() => import(/* webpackChunkName: 'TestLazyLoadingSpin' */ '@/page-components/test/TestLazyLoadingSpin/TestLazyLoadingSpin' ).then((m) => ({ default: m.TestLazyLoadingSpin }))), // prettier-ignore
-  // },
+  {
+    name: 'TestLazyLoadingSpin',
+    path: '/test/lazy-loading-spin',
+    LazyComp: lazy(() => import(/* webpackChunkName: 'TestLazyLoadingSpin' */ '@/page-components/test/TestLazyLoadingSpin/TestLazyLoadingSpin' ).then((m) => ({ default: m.TestLazyLoadingSpin }))), // prettier-ignore
+  },
 ];
 
 export const testRoute = testRouteList.map((route) => (
