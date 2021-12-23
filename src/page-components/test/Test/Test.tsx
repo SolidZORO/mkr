@@ -5,25 +5,9 @@ import { IPageBaseProps } from '@/interfaces';
 import { HtmlMeta, PageWrapper } from '@/components';
 
 import styles from './styles.module.less';
-import cssModule from './css-module.module.css';
 
-// ❌ is not work
-// Please use require
-// import './non-module-less.less';
-
-// ✅ is work!!!
-require('./non-module-less.less');
-
-// ❌ is not work
-// Please move all global CSS imports to src/pages/_app.tsx.
-// Or convert the import to Component-Level CSS (CSS Modules).
-// Read more: https://nextjs.org/docs/messages/css-global
-// Location: src/page-components/test/Test/Test.tsx
-// import './non-module-css.css';
-
-// ❌ is not work
-// Same as 👆 above
-// require('./non-module-css.css');
+import './_css.css';
+import './_less.less';
 
 interface IProps extends IPageBaseProps {}
 
@@ -31,22 +15,13 @@ export const Test: React.FC<IProps> = (props) => (
   <PageWrapper className={cx(styles['comp-wrapper'], props.className)}>
     <HtmlMeta title="Test" />
 
-    {/*<div className={cssModule['image-bg']}>IMAGE-BG</div>*/}
-    {/*<div className={styles['image-bg']}>IMAGE-BG</div>*/}
-    <div
-      className={styles['image-bg']}
-      style={{
-        backgroundImage: "url('/images/image-public.jpg')",
-      }}
-    >
-      IMAGE-BG
-    </div>
-    {/*<div className="image-bg--less">IMAGE-BG</div>*/}
+    <div className="image-bg--css">css</div>
+    <hr />
+    <div className="image-bg--less">less</div>
+    <hr />
+    <div className={styles['image-bg--less-module']}>less module</div>
 
-    <br />
-    <br />
-
-    <div className="test-non-module-less">TEST-NON-MODULE LESS</div>
-    <div className="test-non-module-css">TEST-NON-MODULE CSS</div>
+    <div className="test--less">TEST LESS</div>
+    <div className="test--css">TEST CSS</div>
   </PageWrapper>
 );

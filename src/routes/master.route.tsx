@@ -9,17 +9,17 @@ import { MasterLayout } from '@/layouts';
 import { lazy, routeKey } from './_fn';
 
 const masterRouteList: IRouteItem[] = [
-  {
-    name: 'AboutDarkMode',
-    path: '/about/:name',
-    LazyComp: lazy(() => import(/* webpackChunkName: 'AboutDarkMode' */ '@/page-components/about/AboutName/AboutName' ).then((m) => ({ default: m.AboutName }))), // prettier-ignore
-  },
-  {
-    name: 'About',
-    path: '/about',
-    LazyComp: lazy(() => import(/* webpackChunkName: 'About' */ '@/page-components/about/About/About' ).then((m) => ({ default: m.About }))), // prettier-ignore
-    exact: true,
-  },
+  // {
+  //   name: 'AboutDarkMode',
+  //   path: '/about/:name',
+  //   LazyComp: lazy(() => import(/* webpackChunkName: 'AboutDarkMode' */ '@/page-components/about/AboutName/AboutName' ).then((m) => ({ default: m.AboutName }))), // prettier-ignore
+  // },
+  // {
+  //   name: 'About',
+  //   path: '/about',
+  //   LazyComp: lazy(() => import(/* webpackChunkName: 'About' */ '@/page-components/about/About/About' ).then((m) => ({ default: m.About }))), // prettier-ignore
+  //   exact: true,
+  // },
   {
     name: 'Home',
     path: '/',

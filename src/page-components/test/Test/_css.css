@@ -1,4 +1,4 @@
-.test-non-module-css {
+.test--css {
   background-color: blue;
   color: red;
 }
@@ -6,5 +6,5 @@
 .image-bg--css {
   width: 200px;
   height: 200px;
-  /*background-image: url('../../../assets/images/image.jpg');*/
+  background-image: url('./image-dir--css.jpg');
 }
